@@ -1,0 +1,231 @@
+.big {
+  width: 90%;
+  margin: 30px 5%;
+  background-color: white;
+  padding: 15px;
+  padding-left: 30px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  box-shadow: 1px 1px 10px rgb(201, 201, 201);
+}
+
+.small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.openans {
+  height: auto;
+  opacity: 1;
+  animation-name: up;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+
+  border-top: 1px solid #a70407;
+}
+.heading {
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.closeans {
+  height: 0px;
+  opacity: 0;
+  animation-name: down;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes up {
+  0% {
+    height: 0px;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 15px;
+    padding-top: 15px;
+    height: 100px;
+    opacity: 1;
+  }
+}
+
+@keyframes down {
+  0% {
+    margin-top: 15px;
+    padding-top: 15px;
+    height: 50px;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0px;
+    padding-top: 0px;
+    height: 0px;
+  }
+}
+
+@keyframes arrowup {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+}
+@keyframes arrowdown {
+  0% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+}
+
+.faq {
+  width: 90%;
+  margin: 30px 5%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  box-shadow: 1px 1px 10px rgb(201, 201, 201);
+}
+
+.faq .heading {
+  text-align: center;
+  margin-top: 10px;
+}
+
+@keyframes faqup {
+  0% {
+    height: 0px;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 5px;
+    padding-top: 5px;
+    height: 50px;
+    opacity: 1;
+  }
+}
+
+@keyframes faqdown {
+  0% {
+    height: 50px;
+    opacity: 1;
+    margin-top: 5px;
+    padding-top: 5px;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+}
+.open {
+  height: auto;
+  opacity: 1;
+  animation-name: faqup;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  flex: 100%;
+  border-top: 1px solid rgb(207, 207, 207);
+  line-height: 1.5;
+}
+.close {
+  flex: 100%;
+  height: 0px;
+  opacity: 0;
+  animation-name: faqdown;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.help {
+  margin: 20px;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgb(211, 211, 211);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.add {
+  cursor: pointer;
+  padding: 10px 20px;
+  animation-name: arrowdown;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.up {
+  animation-name: arrowup;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.big a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: block;
+  color: black;
+}
+
+.faqques {
+  letter-spacing: 1px;
+  font-size: 18px;
+}
