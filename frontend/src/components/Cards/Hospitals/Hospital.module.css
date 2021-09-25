@@ -1,0 +1,159 @@
+.hos {
+  position: relative;
+  margin: 10px;
+  /*padding-top: 60px;*/
+  max-width: 31%;
+  min-width: 30%;
+  border: 1px solid rgb(230, 230, 230);
+  box-shadow: -1px -1px 10px rgb(192, 192, 192);
+  overflow: hidden;
+}
+.img {
+  height: 160px;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.name,
+.email,
+.acc,
+.city {
+  padding: 2px;
+}
+
+.name,
+.city {
+  text-transform: uppercase;
+}
+
+.name {
+  text-align: center;
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.name::after {
+  display: block;
+  margin: auto;
+  width: 100px;
+  text-align: center;
+  background-color: #a70407;
+  content: " ";
+  border: 1px solid #a70407;
+  margin-top: 5px;
+}
+
+.acc {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.acc,
+.email {
+  text-align: right;
+  margin-right: 3px;
+}
+.acc {
+  margin-left: 20%;
+}
+.hos p {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 20px 0 0px 3px;
+  display: inline-block;
+}
+
+.city {
+  text-align: center;
+  display: block;
+  width: 90%;
+  border: 1px solid #a70407;
+  background-color: #f0b9ba;
+  margin-left: 5%;
+  margin: 15px 5%;
+  color: #a70407;
+  font-weight: bold;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  padding: 5px;
+}
+
+.hundred {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #a70407;
+  border-right: 1px solid #a70407;
+  padding: 0;
+}
+
+.hundred .a:link,
+.hundred .a:visited {
+  flex: 50%;
+
+  text-decoration: none;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  background-color: #a70407;
+  padding: 5px;
+}
+
+.hundred .a2:link,
+.hundred .a2:visited {
+  flex: 50%;
+
+  text-decoration: none;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #a70407;
+  border-bottom: 1px solid #a70407;
+
+  padding: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hos {
+    max-width: 48%;
+    min-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .hos {
+    max-width: 46%;
+    min-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .hos {
+    max-width: 80%;
+    min-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hos {
+    max-width: 100%;
+    min-width: 30%;
+    margin: 10px 0;
+  }
+}

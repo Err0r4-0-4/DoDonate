@@ -1,0 +1,52 @@
+.block {
+  box-shadow: 1px 1px 10px rgb(201, 201, 201);
+  width: 95%;
+  margin: 15px 2.5%;
+  background-color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.user {
+  height: 110px;
+  width: 110px;
+}
+
+.inner {
+  padding: 15px;
+  flex: 80%;
+}
+
+.one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 0;
+}
+
+.one p {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.aadhar {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.group {
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 14px;
+}
+
+@media all and (max-width: 550px) {
+  .user {
+    display: none;
+  }
+}
