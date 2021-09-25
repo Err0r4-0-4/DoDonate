@@ -1,0 +1,351 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.page {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.header {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 85vh;
+}
+.logo_name {
+  height: 15vh;
+  width: 100%;
+  max-width: 1140px;
+  margin: 10px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 100%;
+  position: relative;
+}
+.logo {
+  height: 15vh;
+  margin: 0 20px 0 0;
+}
+.select {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  padding: 2px 2px;
+  border: 1px solid #d32e32;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  margin: 0 20px;
+  z-index: 1;
+}
+.select2 {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  padding: 2px 2px;
+  border: 1px solid #d32e32;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  margin: 0 20px;
+  z-index: 1;
+}
+
+.button1 {
+  background-color: white;
+  letter-spacing: 1px;
+  color: #d32e32;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  font-size: 16px;
+  min-width: 100px;
+}
+.button2 {
+  letter-spacing: 1px;
+  color: white;
+  background-color: #3eafd1;
+  padding: 10px;
+  border-radius: 100px;
+  font-size: 16px;
+  min-width: 100px;
+  border: 1px solid #42b1d3;
+}
+.blood {
+  color: rgb(241, 117, 117);
+}
+.box {
+  font-size: 20px;
+}
+.do {
+  font-family: "WindSong", cursive;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 64px;
+  display: block;
+  color: #02576f;
+}
+.form {
+  width: 50%;
+  margin: 10px auto 0;
+  flex: 55%;
+  height: 65vh;
+  padding: 100px 20px 0;
+  border-right: 1px solid rgb(219, 219, 219);
+}
+.feildset {
+  position: relative;
+}
+
+.form .feild {
+  display: block;
+  width: 80%;
+  margin: 20px auto 44.5px;
+  padding: 10px 10px 5px;
+  border: none;
+  border-bottom: 2px solid #d32e32;
+}
+.form .feild:focus {
+  outline: none;
+  border: none;
+  padding: 10px 10px 4px;
+  border-bottom: 3px solid #d32e32;
+  box-shadow: 1px 1px 10px solid black;
+
+  transition: all ease 0.2s;
+}
+.form .feild:focus::placeholder {
+  letter-spacing: 1px;
+}
+
+.form button,
+.form .buttonred {
+  display: block;
+  width: 80%;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: #d32e32;
+  border: none;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+
+.form .buttonred {
+  background-color: rgb(211, 81, 81);
+}
+
+.form button:hover {
+  background-color: #cc0003;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.form .buttonred:hover {
+  background-color: rgb(175, 19, 19);
+}
+.form .anchor {
+  width: 80%;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+.form a:visited,
+.form a:link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 5px;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  color: #cc0003;
+}
+
+.form a:hover,
+.form a:active {
+  letter-spacing: 1px;
+  color: #cc0003;
+  margin: 0 -2px;
+}
+.form .error {
+  display: block;
+  width: 80%;
+  margin: 20px auto 44.5px;
+  padding: 10px 10px 5px;
+  border: none;
+  border-bottom: 2px solid rgb(110, 23, 23);
+}
+.form .error2 {
+  color: rgb(110, 23, 23);
+  font-size: 16px;
+
+  margin: auto;
+  text-align: right;
+  position: absolute;
+  right: 20%;
+  top: 10px;
+}
+.form .error::placeholder {
+  color: rgb(110, 23, 23);
+}
+.form .error:focus {
+  outline: none;
+  border: none;
+  padding: 10px 10px 4px;
+  border-bottom: 3px solid rgb(110, 23, 23);
+  box-shadow: 1px 1px 10px solid black;
+}
+.profile {
+  width: 40%;
+  margin: auto;
+  flex: 45%;
+  height: 65vh;
+  padding: 0 80px;
+  overflow: hidden;
+  position: relative;
+}
+.img2 {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+@media only screen and (max-width: 1040px) {
+  .select,
+  .select2 {
+    bottom: -50px;
+  }
+  .button2,
+  .button1 {
+    width: 80px;
+    padding: 5px;
+  }
+  .profile {
+    padding-left: 0px;
+  }
+  .img2 {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .footer ul li a:link,
+  .footer ul li a:visited,
+  .footer ul li a:hover,
+  .footer ul li a:active {
+    font-size: 16px;
+  }
+
+  .form a:visited,
+  .form a:link,
+  .form a:hover,
+  .form a:active {
+    font-size: 14px;
+  }
+
+  .select {
+    left: -100px;
+  }
+  .select2 {
+    right: -100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .profile {
+    display: none;
+    width: 0;
+    flex: 0;
+  }
+  .img2 {
+    display: none;
+  }
+  .form {
+    border-right: none;
+    overflow: hidden;
+    flex-direction: row;
+  }
+  .logo_name {
+    height: 10vh;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+  }
+  .header {
+    justify-content: start;
+    align-items: initial;
+    height: 85%;
+  }
+  .select,
+  .select2 {
+    bottom: -80px;
+  }
+  .footer p {
+    display: none;
+  }
+
+  .footer ul {
+    margin: auto;
+  }
+  .form {
+    padding: 0;
+    padding-top: 120px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .select,
+  .select2 {
+    bottom: -80px;
+  }
+  .select {
+    left: -150px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .select2 {
+    right: -50px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .select2 {
+    right: -70px;
+  }
+  .select {
+    left: -60px;
+  }
+  .logo_name {
+    margin-left: 40px;
+  }
+}

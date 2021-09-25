@@ -1,0 +1,11 @@
+.each {
+  padding: 120px 5px;
+  background-color: rgb(236, 236, 236);
+  overflow: hidden;
+  min-height: 100vh;
+}
+@media all and (max-width: 784px) {
+  .each {
+    padding-top: 100px;
+  }
+}
