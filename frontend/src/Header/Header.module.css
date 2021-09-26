@@ -50,11 +50,11 @@
   display: none;
 }
 .logoname {
-  font-family: 'Bungee Shade', cursive;
+  font-family: "Bungee Shade", cursive;
   color: #c53434;
   font-size: 32px;
   font-weight: 400;
-  padding: 20px 5px;
+  padding: 5px;
 
   text-align: center;
 }

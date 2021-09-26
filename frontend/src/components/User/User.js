@@ -10,6 +10,7 @@ import { RiSendPlane2Fill } from "react-icons/ri";
 import { CgGenderMale } from "react-icons/cg";
 import { GiGroupedDrops } from "react-icons/gi";
 import Spinner from "../../Ui/Spinner";
+import img from "../Image/user.png";
 
 const User = () => {
   const [values, setValues] = useState({
@@ -30,7 +31,6 @@ const User = () => {
   let manager;
 
   useEffect(async () => {
-
     setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
@@ -79,7 +79,6 @@ const User = () => {
   }, []);
 
   const transferHandler = async () => {
-
     setLoading(true);
 
     console.log("reached");
@@ -88,83 +87,94 @@ const User = () => {
 
     const accounts = await web3.eth.getAccounts();
 
-    try{
-
+    try {
       if (values.balance >= amount * 1000000000000000000) {
         await Manager.methods
           .transfer(address, amount * 1000000000000000000)
           .send({
             from: accounts[0],
           });
-      }else{
+      } else {
         throw "not sufficient funds in your account";
-
       }
-    }catch(e){
+    } catch (e) {
       console.log(e);
       setLoading(false);
     }
 
     setLoading(false);
-
-    
   };
 
   return (
     <EachPage>
-
-      {loading ? <Spinner/> : null}
-
-      <div>
-        <div>
-          {values.balance}
-          {values.name}
-          {values.age}
-          {values.sex}
-          {values.mobile}
-          {values.city}
-          {values.state}
-        </div>
+      {loading ? <Spinner /> : null}
+      <div className={styles.box2}>
         <div className={styles.box}>
           <div className={styles.bar}>
-            <p>Payment</p>
+            <p>Personal Details</p>
           </div>
-          <div className={styles.other}>
-            <div className={styles.div}>
-              <p>Payment for facilities</p>
-              <ul className={styles.ul}>
-                <li>
-                  <div className={styles.icon}>
-                    <FaRupeeSign />
-                  </div>
-                  <div>Amount</div>
-                </li>
-                <li>
-                  <div className={styles.icon}>
-                    <RiSendPlane2Fill />
-                  </div>
-                  <div>Send to</div>
-                </li>
-              </ul>
+          <div className={styles.flex}>
+            <img src={img} alt="user" className={styles.img} />
+            <div className={styles.balance}>
+              <div>Balance : {values.balance}</div>
+
+              {values.name}
+              <div>{values.age}</div>
+              <div>{values.sex}</div>
+              <div>{values.mobile}</div>
+              <div>
+                {values.city} ,{values.state}
+              </div>
+
+              <a href="#" className={styles.an}>
+                View Report
+              </a>
+              <a href="#payment" className={styles.an}>
+                Pay Hospital
+              </a>
             </div>
           </div>
-          <div className={styles.form}>
-            <label htmlFor="unit">Amount</label>
-            <input
-              type="text"
-              placeholder="Amount"
-              onChange={(event) => setAmount(event.target.value)}
-            ></input>
-            <label htmlFor="unit">Sender's I.D.</label>
-            <input
-              type="text"
-              placeholder="Sender's Account"
-              onChange={(event) => setAddress(event.target.value)}
-            ></input>
-            <button onClick={transferHandler} className={styles.button}>
-              Send
-            </button>
+        </div>
+      </div>
+      <div className={styles.box} id="payment">
+        <div className={styles.bar}>
+          <p>Payment</p>
+        </div>
+        <div className={styles.other}>
+          <div className={styles.div}>
+            <p>Payment for facilities</p>
+            <ul className={styles.ul}>
+              <li>
+                <div className={styles.icon}>
+                  <FaRupeeSign />
+                </div>
+                <div>Amount</div>
+              </li>
+              <li>
+                <div className={styles.icon}>
+                  <RiSendPlane2Fill />
+                </div>
+                <div>Send to</div>
+              </li>
+            </ul>
           </div>
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="unit">Amount</label>
+          <input
+            type="text"
+            placeholder="Amount"
+            onChange={(event) => setAmount(event.target.value)}
+          ></input>
+          <label htmlFor="unit">Sender's I.D.</label>
+          <input
+            type="text"
+            placeholder="Sender's Account"
+            onChange={(event) => setAddress(event.target.value)}
+          ></input>
+          <button onClick={transferHandler} className={styles.button}>
+            Send
+          </button>
         </div>
       </div>
     </EachPage>
