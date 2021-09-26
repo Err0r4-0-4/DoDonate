@@ -18,6 +18,20 @@ function App() {
     </Switch>
   );
 
+  let render = loginscreen;
+
+  if(localStorage.getItem("type") == "hospital"){
+    render = <Routehos></Routehos>
+  }
+
+  else if(localStorage.getItem("type") == "user"){
+    render = <Routeuser />
+  }
+
+  else if(localStorage.getItem("type") == "admin"){
+    <Routeadmin />
+  }
+
   return (
     <div className="App">
       {/* <Route path="/">
@@ -28,7 +42,9 @@ function App() {
 <Routeuser />
 <Routeadmin /> */}
 
-      {counter ? (
+
+
+      {/* {counter ? (
         name ? (
           <Routehos></Routehos>
         ) : (
@@ -38,7 +54,9 @@ function App() {
         <Routeadmin />
       ) : (
         loginscreen
-      )}
+      )} */}
+
+      {render}
     </div>
   );
 }

@@ -86,6 +86,7 @@ const Loginhos = () => {
       console.log(res.data.hospitalId);
       localStorage.setItem("hospitalId", res.data.hospitalId);
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("type", "hospital");
       dispatch({ type: "loginhos" });
       setLoading(false)
     })

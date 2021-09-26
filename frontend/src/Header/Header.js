@@ -24,6 +24,7 @@ const Header = () => {
   if (location.pathname !== "/hospital/home") header = true;
 
   const signOutHandler = () => {
+    window.location.reload();
     localStorage.clear();
   };
   const [small, setSmall] = useState(false);
@@ -94,7 +95,7 @@ const Header = () => {
                 className={styles.link}
                 activeClassName={styles.active}
                 exact
-                onClick={fun1}
+                onClick={signOutHandler}
               >
                 Signout
               </NavLink>
