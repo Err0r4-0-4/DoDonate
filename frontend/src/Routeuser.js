@@ -6,10 +6,14 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Homeuser from "./components/User/Homeuser";
 import UserHospitals from "./components/Main/UserHospitals";
 import Help from "./components/Main/Help";
+import Footer from "./Footer/Footer";
+import SimpleForm from "./Bot/SimpleForm";
 
 const Routeuser = () => {
   return (
     <div>
+      <SimpleForm />
+
       <HeaderUser />
       <Switch>
         <Route path="/" exact>
@@ -32,6 +36,7 @@ const Routeuser = () => {
           <Notfound />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 };

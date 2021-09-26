@@ -7,6 +7,8 @@ import Homeadmin from "./components/Admin/Homeadmin";
 import List from "./components/Main/List";
 import AdminHospital from "./components/Main/AdminHospitals";
 import Help from "./components/Main/Help";
+import Footer from "./Footer/Footer";
+
 const Routeadmin = () => {
   return (
     <div>
@@ -30,6 +32,7 @@ const Routeadmin = () => {
           <Notfound />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 };
