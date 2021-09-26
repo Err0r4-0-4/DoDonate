@@ -13,7 +13,6 @@ const Loginhos = () => {
   console.log(counter);
   const dispatch = useDispatch();
 
-  
   const [keystroke, keystrikeSet] = useState("");
   const [invalidstate, setinvalidstate] = useState(false);
   const [touched, Settouched] = useState(false);
@@ -57,7 +56,7 @@ const Loginhos = () => {
 
     if (keystroke3.trim().length > 4 && keystroke.trim().length > 3)
       // dispatch({ type: "loginhos" });
-    Settouched(true);
+      Settouched(true);
     if (keystroke.trim().length === 0) {
       setinvalidstate(true);
     }
@@ -74,25 +73,25 @@ const Loginhos = () => {
     }
 
     const data = {
-      email : keystroke.trim(),
-      password: keystroke3.trim()
+      email: keystroke.trim(),
+      password: keystroke3.trim(),
     };
 
     console.log(data);
 
     axios
-    .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
-    .then((res) => {
-      console.log(res.data.hospitalId);
-      localStorage.setItem("hospitalId", res.data.hospitalId);
-      localStorage.setItem("token", res.data.token);
-      dispatch({ type: "loginhos" });
-      setLoading(false)
-    })
-    .then((err) => {
-      console.log(err);
-      setLoading(false)
-    });
+      .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
+      .then((res) => {
+        console.log(res.data.hospitalId);
+        localStorage.setItem("hospitalId", res.data.hospitalId);
+        localStorage.setItem("token", res.data.token);
+        dispatch({ type: "loginhos" });
+        setLoading(false);
+      })
+      .then((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   const isInvalid = touched && invalidstate;
@@ -101,10 +100,9 @@ const Loginhos = () => {
 
   return (
     <form className={styles.form} onSubmit={formsubmission}>
+      {loading ? <Spinner /> : null}
 
-      {loading ? <Spinner/> : null}
-
-      {isAuth ?  <Redirect to='/hospital/home'/> : null}
+      {isAuth ? <Redirect to="/hospital/home" /> : null}
       {/* {isAuth ? <Redirect to="creatorProfile" /> : null}
       {showSpinner ? <Spinner /> : null} */}
       <div className={styles.feildset}>
@@ -122,7 +120,7 @@ const Loginhos = () => {
           </p>
         )}
       </div>
-     
+
       <div className={styles.feildset}>
         <input
           type="password"
