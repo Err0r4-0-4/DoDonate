@@ -5,6 +5,7 @@ import Notfound from "./Ui/Notfound";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Homeuser from "./components/User/Homeuser";
 import UserHospitals from "./components/Main/UserHospitals";
+import Help from "./components/Main/Help";
 
 const Routeuser = () => {
   return (
@@ -22,6 +23,9 @@ const Routeuser = () => {
         </Route>
         <Route path="/hospitals" exact>
           <UserHospitals />
+        </Route>
+        <Route path="/help" exact>
+          <Help />
         </Route>
 
         <Route path="/*">
