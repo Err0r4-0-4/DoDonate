@@ -2,6 +2,8 @@ const User = require("../models/model.user");
 const accountSid = process.env.accountSid;
 const authToken = process.env.authToken;
 const client = require("twilio")(accountSid, authToken);
+const ipfsAPI = require("ipfs-api");
+const ipfs = ipfsAPI("ipfs.infura.io", "5001", { protocol: "https" });
 
 exports.signup = async (req, res, next) => {
   try {
@@ -56,4 +58,24 @@ exports.login = async (req, res, next) => {
     res.status(200).send({ message: error.message });
     return;
   }
+};
+
+exports.uploadReport = async (req, res, next) => {
+  let file = req.files.file;
+  console.log(file);
+  ipfs.add(file.data, async (err, file) => {
+    console.log(file);
+    if (err) {
+      console.log(err);
+      res.status(400).send({ message: err.message });
+      return;
+    }
+    try {
+      res
+        .status(200)
+        .send({ fileUrl: `https://ipfs.infura.io/ipfs/${file[0].path}` });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  });
 };
