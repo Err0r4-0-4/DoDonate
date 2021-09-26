@@ -29,7 +29,7 @@ function App() {
   }
 
   else if(localStorage.getItem("type") == "admin"){
-    <Routeadmin />
+    render = <Routeadmin />
   }
 
   return (
@@ -41,7 +41,6 @@ function App() {
       {/* <Routehos></Routehos>
 <Routeuser />
 <Routeadmin /> */}
-
 
 
       {/* {counter ? (

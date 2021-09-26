@@ -16,6 +16,9 @@ const Routeuser = () => {
 
       <HeaderUser />
       <Switch>
+      <Route path="/hospital/*" exact>
+          <Redirect to="/home" />
+        </Route>
         <Route path="/" exact>
           <Redirect to="/home" />
         </Route>

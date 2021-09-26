@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import Spinner from "../../Ui/Spinner";
+import { AiFillWindows } from "react-icons/ai";
 
 const Loginuser = () => {
   const counter = useSelector((state) => state.counter);
@@ -87,12 +88,16 @@ const Loginuser = () => {
       console.log(res);
       dispatch({ type: "loginuser" });
       localStorage.setItem("aadhaar", res.data.aadharNo);
+      localStorage.setItem("url", res.data.fileUrl);
       localStorage.setItem("type", "user");
+      
       setLoading(false);
+      window.location.reload();
     })
-    .then((err) => {
+    .catch((err) => {
       console.log(err);
       setLoading(false);
+      window.alert("unable to login");
     });
 
   };

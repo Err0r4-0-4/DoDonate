@@ -27,6 +27,7 @@ const Header = () => {
     window.location.reload();
     localStorage.clear();
   };
+  
   const [small, setSmall] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
