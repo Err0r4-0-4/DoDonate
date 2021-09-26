@@ -103,9 +103,10 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 10px;
+  flex: 30%;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 11400px) {
   .flexhos {
     justify-content: center;
   }
