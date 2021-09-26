@@ -25,6 +25,7 @@ const Loginpage = () => {
   const onclickselect2 = () => {
     setBut(false);
     setBut2(false);
+    
   };
   const onclickselect3 = () => {
     setBut(false);
