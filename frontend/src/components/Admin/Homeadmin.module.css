@@ -1,0 +1,435 @@
+.main {
+  min-height: 100vh;
+  width: 100vw;
+  overflow: none;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  background-color: rgb(233, 233, 233);
+}
+.mainpage {
+  height: 70vh;
+  width: 100%;
+  background-image: linear-gradient(125deg, #204561d3 60%, #e510142d 71%),
+    url("../Image/donate.jpg");
+  /*background-attachment: fixed;*/
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.head {
+  padding-top: 170px;
+  margin: auto;
+  padding-left: 100px;
+}
+
+.headtxt {
+  width: 60%;
+  margin: 10px 15px 20px;
+  color: rgb(255, 255, 255);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+}
+.typewriter {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ee2528;
+}
+.blue {
+  color: #ee2528;
+}
+.head p {
+  max-width: 1140px;
+  margin: auto;
+  padding: 10px 50px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(59, 59, 59);
+}
+.fifty {
+  width: 50%;
+}
+.but1,
+.but2 {
+  margin: 10px;
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #680305;
+  border-radius: 100px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  min-width: 45%;
+  text-align: center;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  text-transform: uppercase;
+}
+
+.but1:link,
+.but1:visited {
+  background-color: #a70407;
+  margin-right: 20px;
+  color: white;
+  font-weight: 500;
+}
+
+.but1:hover,
+.but1:active {
+  background-color: white;
+  color: #a70407;
+  border: 1px solid #a70407;
+  font-weight: 500;
+  letter-spacing: 3px;
+  box-shadow: 0 0 10px white;
+}
+
+.but2:link,
+.but2:visited {
+  color: white;
+  border-color: white;
+  background-color: transparent;
+  font-weight: 500;
+}
+.but2:hover,
+.but2:active {
+  background-color: white;
+  color: #a70407;
+  border: 1px solid #a70407;
+  font-weight: 500;
+  letter-spacing: 3px;
+  box-shadow: 0 0 10px white;
+}
+
+/* Stats*/
+.title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+.title::after {
+  display: block;
+  margin: auto;
+  width: 100px;
+  text-align: center;
+  background-color: #a70407;
+  content: " ";
+  border: 1px solid #a70407;
+  margin-top: 20px;
+}
+.footwhite {
+  margin: 20px 40px;
+  width: 90%;
+  background-color: transparent;
+  padding: 30px 20px 10px;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.footwhite .footerul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.footwhite .footerul li {
+  color: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0;
+  flex: 25%;
+}
+
+.box {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 10px 10px 10px;
+  min-width: 260px;
+
+  box-shadow: 1px 1px 3px rgb(207, 207, 207);
+  margin: 10px 10px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 30px;
+}
+.box p {
+  text-align: right;
+  display: block;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.box h1 {
+  margin: 0;
+  border-top: 1px solid rgb(206, 206, 206);
+  font-weight: 300;
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 20px;
+}
+.iconbox1 {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  top: -30px;
+  left: 15px;
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  padding: 25px;
+  box-shadow: 1px 1px 10px rgb(189, 189, 189);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.iconbox2 {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  top: -30px;
+  left: 15px;
+  padding: 25px;
+  box-shadow: 1px 1px 10px rgb(189, 189, 189);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background: linear-gradient(60deg, #26c6da, #00acc1);
+}
+.iconbox3 {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  top: -30px;
+  left: 15px;
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  padding: 25px;
+  box-shadow: 1px 1px 10px rgb(189, 189, 189);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-image: linear-gradient(60deg, #f07e7c, #e53935);
+}
+.iconbox4 {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  top: -30px;
+  left: 15px;
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+  padding: 25px;
+  box-shadow: 1px 1px 10px rgb(189, 189, 189);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  background-color: #43b849;
+}
+
+.box .big {
+  font-size: 28px;
+  font-weight: 400;
+  display: inline-block;
+  margin-right: 2px;
+  text-align: right;
+}
+
+.iconwhite {
+  color: white;
+  font-size: 36px;
+  stroke-width: 0px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 1400px) {
+  .footwhite .footerul li {
+    flex: 50%;
+  }
+  .headtxt {
+    font-size: 34px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .head {
+    padding-left: 50px;
+  }
+  .headtxt {
+    font-size: 30px;
+  }
+  .typewriter {
+    font-size: 30px;
+  }
+  .fifty {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footwhite {
+    width: 95%;
+    padding: 10px 10px;
+    margin: 10px;
+    margin-top: 30px;
+  }
+  .footwhite .footerul li {
+    margin-bottom: 15px;
+  }
+  .fifty {
+    width: 50%;
+  }
+  .but1,
+  .but2 {
+    display: block;
+    margin: 20px;
+  }
+  .but1 {
+    margin-top: 35px;
+  }
+  .headtxt {
+    width: 90%;
+  }
+  .typewriter {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .headtxt {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+  .typewriter {
+    font-size: 28px;
+  }
+  .but1,
+  .but2 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .fifty {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mainpage {
+    background-image: linear-gradient(125deg, #204561d3 60%, #0300008a 65%),
+      url("../Image/donate.jpg");
+    /* height: 80vh;*/
+  }
+  .footwhite {
+    width: 95%;
+    padding: 10px 0;
+  }
+  .head {
+    padding-left: 5px;
+  }
+  .headtxt {
+    width: 98%;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 30px 5px;
+    text-align: center;
+  }
+  .typewriter {
+    font-size: 22px;
+  }
+  .but1,
+  .but2 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 30px 20px;
+    letter-spacing: 1px;
+  }
+  .fifty {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mainpage {
+    background-image: linear-gradient(125deg, #204561d3 60%, #0300008a 65%),
+      url("../Image/donate.jpg");
+  }
+  .head {
+    padding-left: 3px;
+  }
+  .headtxt {
+    width: 98%;
+    font-size: 22px;
+    letter-spacing: 0px;
+    margin: 30px 5px;
+    text-align: center;
+  }
+  .typewriter {
+    font-size: 20px;
+  }
+  .but1,
+  .but2 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 30px 20px;
+    letter-spacing: 1px;
+  }
+  .fifty {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 400px) {
+  .head {
+    padding-left: 1px;
+  }
+  .headtxt {
+    width: 98%;
+    font-size: 20px;
+    letter-spacing: 0px;
+    margin: 30px 5px;
+    text-align: center;
+  }
+  .typewriter {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  .mainpage {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .mainpage {
+    height: 80vh;
+  }
+}
