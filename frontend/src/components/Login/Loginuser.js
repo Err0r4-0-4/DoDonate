@@ -88,7 +88,9 @@ const Loginuser = () => {
       console.log(res);
       dispatch({ type: "loginuser" });
       localStorage.setItem("aadhaar", res.data.aadharNo);
+      localStorage.setItem("url", res.data.fileUrl);
       localStorage.setItem("type", "user");
+      
       setLoading(false);
       window.location.reload();
     })

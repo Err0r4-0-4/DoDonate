@@ -126,7 +126,7 @@ const User = () => {
                 Location: {values.city} ,{values.state}
               </div>
 
-              <a href="#" className={styles.an}>
+              <a href={localStorage.getItem("url")} className={styles.an}>
                 View Report
               </a>
               <a href="#payment" className={styles.an}>
