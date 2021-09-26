@@ -91,6 +91,7 @@ const Loginadmin = () => {
       .then((err) => {
         console.log(err);
         setLoading(false);
+        window.alert("unable to login");
       });
   };
 

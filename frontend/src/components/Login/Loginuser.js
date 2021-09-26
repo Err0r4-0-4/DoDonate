@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import Spinner from "../../Ui/Spinner";
+import { AiFillWindows } from "react-icons/ai";
 
 const Loginuser = () => {
   const counter = useSelector((state) => state.counter);
@@ -93,6 +94,7 @@ const Loginuser = () => {
     .then((err) => {
       console.log(err);
       setLoading(false);
+      window.alert("unable to login");
     });
 
   };

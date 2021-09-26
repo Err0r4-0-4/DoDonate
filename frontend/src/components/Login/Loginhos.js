@@ -91,7 +91,8 @@ const Loginhos = () => {
     })
     .then((err) => {
       console.log(err);
-      setLoading(false)
+      setLoading(false);
+      window.alert("unable to login");
     });
   };
 
