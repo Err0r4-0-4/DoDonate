@@ -87,9 +87,10 @@ const Loginhos = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("type", "hospital");
       dispatch({ type: "loginhos" });
-      setLoading(false)
+      setLoading(false);
+      window.location.reload();
     })
-    .then((err) => {
+    .catch((err) => {
       console.log(err);
       setLoading(false);
       window.alert("unable to login");

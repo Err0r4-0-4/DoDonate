@@ -87,8 +87,9 @@ const Loginadmin = () => {
         dispatch({ type: "loginadmin" });
         localStorage.setItem("type", "admin");
         setLoading(false)
+        window.location.reload();
       })
-      .then((err) => {
+      .catch((err) => {
         console.log(err);
         setLoading(false);
         window.alert("unable to login");

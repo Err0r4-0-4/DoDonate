@@ -90,8 +90,9 @@ const Loginuser = () => {
       localStorage.setItem("aadhaar", res.data.aadharNo);
       localStorage.setItem("type", "user");
       setLoading(false);
+      window.location.reload();
     })
-    .then((err) => {
+    .catch((err) => {
       console.log(err);
       setLoading(false);
       window.alert("unable to login");
