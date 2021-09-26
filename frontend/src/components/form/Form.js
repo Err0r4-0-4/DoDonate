@@ -18,6 +18,8 @@ const Form = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const [file, setFile] = useState({});
+
   const createDonorHandler = async (event) => {
 
     event.preventDefault();
@@ -45,9 +47,22 @@ const Form = () => {
         phoneNo: inputMobile
       };
 
+      console.log(file);
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("aadharNo", inputAadhaar);
+      formData.append("name", inputName);
+      formData.append("city", inputCity);
+      formData.append("state", inputState);
+      formData.append("age", inputAge);
+      formData.append("bgroup", "A+");
+      formData.append("gender", true);
+      formData.append("phoneNo", inputMobile);
+
       console.log(data);
 
-      axios.post("https://dodonate-backend.herokuapp.com/user/signup", data)
+      axios.post("https://dodonate-backend.herokuapp.com/user/signup", formData)
       .then((res) => {
       console.log(res);
       // dispatch({ type: "loginhos" });
@@ -113,6 +128,13 @@ const Form = () => {
         <input type="text" id="state" placeholder="State" 
          onChange={(event) => setInputState(event.target.value)}/>
       </div>
+
+      <input
+          type="file"
+          onChange={(event) => setFile(event.target.files[0])}
+          style={{ width: "100%", margin: "20px 0", border: "1px solid #ccc" }}
+        />
+
       <button className={styles.button} 
       onClick={createDonorHandler}>Add</button>
     </form>

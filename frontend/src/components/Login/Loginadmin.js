@@ -85,6 +85,7 @@ const Loginadmin = () => {
       .then((res) => {
         console.log(res);
         dispatch({ type: "loginadmin" });
+        localStorage.setItem("type", "admin");
         setLoading(false)
       })
       .then((err) => {

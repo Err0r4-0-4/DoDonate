@@ -80,18 +80,19 @@ const Loginhos = () => {
     console.log(data);
 
     axios
-      .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
-      .then((res) => {
-        console.log(res.data.hospitalId);
-        localStorage.setItem("hospitalId", res.data.hospitalId);
-        localStorage.setItem("token", res.data.token);
-        dispatch({ type: "loginhos" });
-        setLoading(false);
-      })
-      .then((err) => {
-        console.log(err);
-        setLoading(false);
-      });
+    .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
+    .then((res) => {
+      console.log(res.data.hospitalId);
+      localStorage.setItem("hospitalId", res.data.hospitalId);
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("type", "hospital");
+      dispatch({ type: "loginhos" });
+      setLoading(false)
+    })
+    .then((err) => {
+      console.log(err);
+      setLoading(false)
+    });
   };
 
   const isInvalid = touched && invalidstate;
