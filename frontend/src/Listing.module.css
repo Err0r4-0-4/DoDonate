@@ -1,0 +1,31 @@
+.ul {
+  list-style-type: none;
+  color: black;
+}
+
+.line {
+  color: black;
+  width: 98.8%;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+.add {
+  min-width: 100px;
+  margin: 10px 50px;
+}
+
+.text {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.textopen {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  -ms-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+}

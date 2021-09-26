@@ -4,6 +4,8 @@ import web3 from "../../ethereum/web3";
 import styles from "./Form.module.css";
 import cx from "classnames";
 import axios from "axios";
+import Spinner from "../../Ui/Spinner";
+
 const Form = () => {
 
   const [inputAadhaar, setInputAadhaar] = useState("");
@@ -14,19 +16,23 @@ const Form = () => {
   const [inputState, setInputState] = useState("");
   const [inputMobile, setInputMobile] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   const createDonorHandler = async (event) => {
 
     event.preventDefault();
+
+    setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
 
     console.log(accounts[0]);
 
-    // await Manager.methods
-    //   .createDonor(inputAadhaar, inputName, inputAge, true, inputCity, inputState, inputMobile)
-    //   .send({
-    //     from: accounts[0],
-    //   });
+    await Manager.methods
+      .createDonor(inputAadhaar, inputName, inputAge, true, inputCity, inputState, inputMobile)
+      .send({
+        from: accounts[0],
+      });
 
       const data = {
         aadharNo : inputAadhaar,
@@ -45,16 +51,20 @@ const Form = () => {
       .then((res) => {
       console.log(res);
       // dispatch({ type: "loginhos" });
+      setLoading(false);
       
     })
     .catch((err) => {
       console.log(err.message);
+      setLoading(false);
     });
   };
 
 
   return (
     <form className={styles.form} onSubmit={createDonorHandler}>
+
+      {loading ? <Spinner/> : null}
 
       <div className={styles.fifty}>
         <label htmlFor="name">Full Name</label>

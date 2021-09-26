@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Donor from "../../ethereum/donor";
 import Manager from "../../ethereum/manager";
 import web3 from "../../ethereum/web3";
+import Spinner from "../../Ui/Spinner";
 import axios from "axios";
 
 import styles from "./Form2.module.css";
@@ -11,8 +12,12 @@ const Form2 = () => {
   const [units, setUnits] = useState("");
   const [group, setGroup] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   const donateHandler = async (event) => {
     event.preventDefault();
+
+    setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
 
@@ -27,31 +32,54 @@ const Form2 = () => {
     console.log(date);
     console.log(Date.now() / 3600000);
 
-    if (date <= Date.now() / 3600000) {
-      console.log("true");
-      await donor.methods.donate().send({
-        from: accounts[0],
-      });
+    try{
+
+      if (date <= Date.now() / 3600000) {
+        console.log("true");
+        await donor.methods.donate().send({
+          from: accounts[0],
+        });
+
+
+        const data = {
+          hospitalId: localStorage.getItem("hospitalId"),
+          aadharNo: Aadhaar,
+          unit: units,
+          bgroup: group,
+        };
+    
+        axios
+          .post(
+            "https://dodonate-backend.herokuapp.com/hospital/addPatientData",
+            data
+          )
+          .then((res) => {
+            console.log(res);
+            setLoading(false);
+          })
+          .catch((err) => {
+            console.log(err);
+            setLoading(false);
+            window.alert(err);
+          });
+
+      }
+
+      else{
+        console.log("err");
+        throw "not eligible at the moment!!!";
+        setLoading(false);
+      }
+
+    }catch(e){
+      console.log(e);
+      setLoading(false);
+      window.alert(e);
     }
 
-    const data = {
-      hospitalId: localStorage.getItem("hospitalId"),
-      aadharNo: Aadhaar,
-      unit: units,
-      bgroup: group,
-    };
+   
 
-    axios
-      .post(
-        "https://dodonate-backend.herokuapp.com/hospital/addPatientData",
-        data
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .then((err) => {
-        console.log(err);
-      });
+    
 
     const balance = await donor.methods.balance().call();
 
@@ -60,6 +88,9 @@ const Form2 = () => {
 
   return (
     <form className={styles.form} onSubmit={donateHandler}>
+
+      {loading ? <Spinner/> : false}
+
       <div className={styles.hundred}>
         <label htmlFor="aadhar">Aadhar Number</label>
 

@@ -5,6 +5,8 @@ import Form from "../form/Form";
 import Other from "./Other";
 import Slide from "react-reveal/Slide";
 import EachPage from "../../Ui/EachPage";
+import Spinner from "../../Ui/Spinner";
+
 const Newuser = () => {
 
   return (
