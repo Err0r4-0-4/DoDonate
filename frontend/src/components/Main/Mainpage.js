@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import styles from "./Mainpage.module.css";
@@ -8,6 +8,15 @@ import { FaRegHospital } from "react-icons/fa";
 import { CgUserlane } from "react-icons/cg";
 
 const Mainpage = () => {
+  const [small, setSmall] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () =>
+        setSmall(window.pageYOffset > 200)
+      );
+    }
+  }, []);
+
   const { text } = useTypewriter({
     words: ["Blood,", "Human,", "Family,", "India..."],
     loop: 0,
@@ -17,6 +26,10 @@ const Mainpage = () => {
 
   return (
     <div className={styles.main}>
+      <div className={small ? styles.hiddena : styles.amount}>
+        <div className={small ? styles.hidden : styles.amountt}>Amount:</div>
+        <div className={styles.amounta}>56 ETH</div>
+      </div>
       <div className={styles.mainpage}>
         <div className={styles.head}>
           <h1 className={styles.headtxt}>
@@ -100,8 +113,8 @@ const Mainpage = () => {
           </li>
         </ul>
       </div>
-      {/* <h1 className={styles.title}>Further</h1>
-      <Info /> */}
+      <h1 className={styles.title}>Further</h1>
+      <Info />
     </div>
   );
 };

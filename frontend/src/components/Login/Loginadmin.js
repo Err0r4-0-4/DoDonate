@@ -5,6 +5,7 @@ import { BsFillExclamationCircleFill } from "react-icons/bs";
 //import Spinner from "../Ui/Spinner";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import Spinner from "../../Ui/Spinner";
 
 const Loginadmin = () => {
   // console.log(1);
@@ -18,6 +19,8 @@ const Loginadmin = () => {
   const [showSpinner, setshowSpinner] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
   const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const changedevent = (e) => {
     keystrikeSet(e.target.value);
     Settouched(false);
@@ -29,22 +32,6 @@ const Loginadmin = () => {
       setinvalidstate(true);
     } else setinvalidstate(false);
   };
-
-  //   const [keystroke2, keystrikeSet2] = useState("");
-  //   const [invalidstate2, setinvalidstate2] = useState(false);
-  //   const [touched2, Settouched2] = useState(false);
-
-  //   const changedevent2 = (e) => {
-  //     keystrikeSet2(e.target.value);
-  //     Settouched2(false);
-  //   };
-
-  //   const blurevent2 = () => {
-  //     Settouched2(true);
-  //     if (keystroke2.trim().length === 0) {
-  //       setinvalidstate2(true);
-  //     } else setinvalidstate2(false);
-  //   };
 
   const [keystroke3, keystrikeSet3] = useState("");
   const [invalidstate3, setinvalidstate3] = useState(false);
@@ -64,10 +51,12 @@ const Loginadmin = () => {
 
   const formsubmission = (e) => {
     e.preventDefault();
+
+    setLoading(true);
+
     if (keystroke3.trim().length > 4 && keystroke.trim().length > 3)
       // dispatch({ type: "loginadmin" });
       console.log(isInvalid + " " + isInvalid3);
-      
     Settouched(true);
     if (keystroke.trim().length === 0) {
       setinvalidstate(true);
@@ -96,9 +85,11 @@ const Loginadmin = () => {
       .then((res) => {
         console.log(res);
         dispatch({ type: "loginadmin" });
+        setLoading(false)
       })
       .then((err) => {
         console.log(err);
+        setLoading(false);
       });
   };
 
@@ -108,6 +99,9 @@ const Loginadmin = () => {
 
   return (
     <form className={styles.form} onSubmit={formsubmission}>
+
+      {loading ? <Spinner/> : null}
+
       {/* {isAuth ? <Redirect to="creatorProfile" /> : null}
       {showSpinner ? <Spinner /> : null} */}
       <div className={styles.feildset}>

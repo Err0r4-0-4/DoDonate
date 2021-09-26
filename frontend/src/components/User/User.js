@@ -9,6 +9,8 @@ import { FaRupeeSign } from "react-icons/fa";
 import { RiSendPlane2Fill } from "react-icons/ri";
 import { CgGenderMale } from "react-icons/cg";
 import { GiGroupedDrops } from "react-icons/gi";
+import Spinner from "../../Ui/Spinner";
+
 const User = () => {
   const [values, setValues] = useState({
     balance: "",
@@ -23,9 +25,14 @@ const User = () => {
   const [amount, setAmount] = useState("");
   const [address, setAddress] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   let manager;
 
   useEffect(async () => {
+
+    setLoading(true);
+
     const accounts = await web3.eth.getAccounts();
 
     const aadhar = "aaa";
@@ -66,31 +73,48 @@ const User = () => {
 
     setValues({ balance, name, age, sex, mobile, city, state });
 
+    setLoading(false);
+
     console.log(values);
   }, []);
 
   const transferHandler = async () => {
+
+    setLoading(true);
+
     console.log("reached");
 
     const donor = Donor("0x5Cf12D40eeaea3522F68b627765a45960FdD97de");
 
     const accounts = await web3.eth.getAccounts();
 
-    if (values.balance >= amount * 1000000000000000000) {
-      await Manager.methods
-        .transfer(address, amount * 1000000000000000000)
-        .send({
-          from: accounts[0],
-        });
+    try{
 
-      await donor.methods.transfer(amount * 1000000000000000000).send({
-        from: accounts[0],
-      });
+      if (values.balance >= amount * 1000000000000000000) {
+        await Manager.methods
+          .transfer(address, amount * 1000000000000000000)
+          .send({
+            from: accounts[0],
+          });
+      }else{
+        throw "not sufficient funds in your account";
+
+      }
+    }catch(e){
+      console.log(e);
+      setLoading(false);
     }
+
+    setLoading(false);
+
+    
   };
 
   return (
     <EachPage>
+
+      {loading ? <Spinner/> : null}
+
       <div>
         <div>
           {values.balance}

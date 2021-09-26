@@ -47,7 +47,7 @@ const Header = () => {
               alt="Logo"
               className={small ? styles.nologo : styles.logo}
             ></img>
-            <p className={styles.logoname}>DONatE</p>
+            <p className={styles.logoname}>Do.Donate</p>
           </div>
 
           <ul className={styles.ul}>

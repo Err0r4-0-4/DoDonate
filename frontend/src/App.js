@@ -1,10 +1,11 @@
-import logo from "./logo.svg";
-import { useSelector } from "react-redux";
-import Routehos from "./Routehos";
-import Loginpage from "./components/Login/Loginpage";
-import { Route, useLocation, Switch } from "react-router";
-
 import "./App.css";
+import { Route, Switch } from "react-router";
+import Loginpage from "./components/Login/Loginpage";
+
+import Routeadmin from "./Routeadmin";
+import Routehos from "./Routehos";
+import Routeuser from "./Routeuser";
+import { useSelector } from "react-redux";
 function App() {
   const counter = useSelector((state) => state.counter);
   const name = useSelector((state) => state.name);
@@ -26,7 +27,7 @@ function App() {
       {/* <Routehos></Routehos>
 <Routeuser />
 <Routeadmin /> */}
-      {/* 
+
       {counter ? (
         name ? (
           <Routehos></Routehos>
@@ -37,9 +38,7 @@ function App() {
         <Routeadmin />
       ) : (
         loginscreen
-      )} */}
-
-      {counter && name ? <Routehos></Routehos> : loginscreen}
+      )}
     </div>
   );
 }

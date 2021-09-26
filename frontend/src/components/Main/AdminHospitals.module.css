@@ -1,0 +1,241 @@
+.box {
+  width: 75%;
+  margin: auto;
+  box-shadow: 2px 2px 10px black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto 20px;
+  padding-top: 100px;
+  min-width: 1070px;
+  position: relative;
+  background-color: white;
+}
+
+.button {
+  width: 100%;
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+  background-color: #b13426;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #a72c1f;
+  box-shadow: 1px 1px 1px rgb(175, 175, 175);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.button:hover {
+  background-color: #b13426;
+}
+.other {
+  flex: 40%;
+  width: 40%;
+}
+.form {
+  flex: 60%;
+  width: 60%;
+  padding: 20px 50px 20px 10px;
+}
+.bar {
+  position: absolute;
+  top: 10px;
+  background-color: #b13426;
+  height: 80px;
+  width: 104%;
+  left: -2%;
+  margin: auto;
+}
+
+.bar p {
+  padding: 20px;
+  padding-left: 40px;
+  margin: auto;
+  font-size: 36px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+  padding: 10px 0 10px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #aa2a1b;
+  padding: 1px 0;
+  margin-bottom: 20px;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #b13426;
+  padding: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .box {
+    min-width: 900px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .box {
+    min-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .box {
+    width: 90%;
+    min-width: 360px;
+    flex-direction: row-reverse;
+  }
+  .other {
+    order: 4;
+    min-width: 100%;
+    flex: 100%;
+  }
+  .form {
+    order: 1;
+    width: 100%;
+    flex: 100%;
+    padding: 5px 5% 25px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .bar p {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bar p {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .box {
+    min-width: 95%;
+    max-width: 100px;
+    margin: 10px 2.5%;
+  }
+  .bar {
+    width: 100%;
+    left: 0%;
+    top: 0;
+  }
+  .bar p {
+    font-size: 22px;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+.div {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #b13426;
+}
+.div h1 {
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 10px;
+}
+.div p {
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 10px;
+}
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border: 1px solid rgba(212, 210, 230, 0.377);
+  padding: 15px;
+  margin: auto;
+}
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.ul li {
+  flex: 40%;
+}
+
+.ul li div {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .div h1 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .div h1 {
+    font-size: 26px;
+    padding-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .div {
+    width: 100%;
+    margin: 0;
+  }
+  .ul li {
+    flex: 30%;
+  }
+  .div h1,
+  .div p {
+    text-align: center;
+  }
+
+  .ul li {
+    margin: 20px 0;
+    padding: 0;
+  }
+}
+
+/* List of hospitals*/
+
+.flexhos {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .flexhos {
+    justify-content: center;
+  }
+}

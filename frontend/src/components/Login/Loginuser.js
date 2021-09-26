@@ -6,6 +6,7 @@ import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
+import Spinner from "../../Ui/Spinner";
 
 const Loginuser = () => {
   const counter = useSelector((state) => state.counter);
@@ -17,6 +18,7 @@ const Loginuser = () => {
   const [touched, Settouched] = useState(false);
   const [showSpinner, setshowSpinner] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const changedevent = (e) => {
     keystrikeSet(e.target.value);
@@ -29,7 +31,6 @@ const Loginuser = () => {
       setinvalidstate(true);
     } else setinvalidstate(false);
   };
-
 
   const [keystroke3, keystrikeSet3] = useState("");
   const [invalidstate3, setinvalidstate3] = useState(false);
@@ -49,6 +50,9 @@ const Loginuser = () => {
 
   const formsubmission = (e) => {
     e.preventDefault();
+
+    setLoading(true);
+
     if (keystroke3.trim().length > 4 && keystroke.trim().length > 3)
       // dispatch({ type: "loginadmin" });
     Settouched(true);
@@ -82,10 +86,12 @@ const Loginuser = () => {
     .then((res) => {
       console.log(res);
       dispatch({ type: "loginuser" });
-      
+      localStorage.setItem("aadhaar", res.data.aadharNo);
+      setLoading(false);
     })
     .then((err) => {
       console.log(err);
+      setLoading(false);
     });
 
   };
@@ -96,6 +102,7 @@ const Loginuser = () => {
 
   return (
     <form className={styles.form} onSubmit={formsubmission}>
+      {loading ? <Spinner/> : null}
       {/* {showSpinner ? <Spinner /> : null}
       {isAuth ? <Redirect to="home" /> : null} */}
       <div className={styles.feildset}>

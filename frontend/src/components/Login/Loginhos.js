@@ -6,20 +6,20 @@ import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineConsoleSql } from "react-icons/ai";
+import Spinner from "../../Ui/Spinner";
 
 const Loginhos = () => {
   const counter = useSelector((state) => state.counter);
   console.log(counter);
   const dispatch = useDispatch();
 
-  
   const [keystroke, keystrikeSet] = useState("");
   const [invalidstate, setinvalidstate] = useState(false);
   const [touched, Settouched] = useState(false);
   const [showSpinner, setshowSpinner] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
   const [err, setErr] = useState(false);
-
+  const [loading, setLoading] = useState(false);
 
   const changedevent = (e) => {
     keystrikeSet(e.target.value);
@@ -32,22 +32,6 @@ const Loginhos = () => {
       setinvalidstate(true);
     } else setinvalidstate(false);
   };
-
-  //   const [keystroke2, keystrikeSet2] = useState("");
-  //   const [invalidstate2, setinvalidstate2] = useState(false);
-  //   const [touched2, Settouched2] = useState(false);
-
-  //   const changedevent2 = (e) => {
-  //     keystrikeSet2(e.target.value);
-  //     Settouched2(false);
-  //   };
-
-  //   const blurevent2 = () => {
-  //     Settouched2(true);
-  //     if (keystroke2.trim().length === 0) {
-  //       setinvalidstate2(true);
-  //     } else setinvalidstate2(false);
-  //   };
 
   const [keystroke3, keystrikeSet3] = useState("");
   const [invalidstate3, setinvalidstate3] = useState(false);
@@ -67,9 +51,12 @@ const Loginhos = () => {
 
   const formsubmission = (e) => {
     e.preventDefault();
+
+    setLoading(true);
+
     if (keystroke3.trim().length > 4 && keystroke.trim().length > 3)
       // dispatch({ type: "loginhos" });
-    Settouched(true);
+      Settouched(true);
     if (keystroke.trim().length === 0) {
       setinvalidstate(true);
     }
@@ -86,24 +73,25 @@ const Loginhos = () => {
     }
 
     const data = {
-      email : keystroke.trim(),
-      password: keystroke3.trim()
+      email: keystroke.trim(),
+      password: keystroke3.trim(),
     };
 
     console.log(data);
 
     axios
-    .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
-    .then((res) => {
-      console.log(res.data.hospitalId);
-      localStorage.setItem("hospitalId", res.data.hospitalId);
-      localStorage.setItem("token", res.data.token);
-      dispatch({ type: "loginhos" });
-      
-    })
-    .then((err) => {
-      console.log(err);
-    });
+      .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
+      .then((res) => {
+        console.log(res.data.hospitalId);
+        localStorage.setItem("hospitalId", res.data.hospitalId);
+        localStorage.setItem("token", res.data.token);
+        dispatch({ type: "loginhos" });
+        setLoading(false);
+      })
+      .then((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   const isInvalid = touched && invalidstate;
@@ -112,8 +100,9 @@ const Loginhos = () => {
 
   return (
     <form className={styles.form} onSubmit={formsubmission}>
+      {loading ? <Spinner /> : null}
 
-      {isAuth ?  <Redirect to='/hospital/home'/> : null}
+      {isAuth ? <Redirect to="/hospital/home" /> : null}
       {/* {isAuth ? <Redirect to="creatorProfile" /> : null}
       {showSpinner ? <Spinner /> : null} */}
       <div className={styles.feildset}>
@@ -131,7 +120,7 @@ const Loginhos = () => {
           </p>
         )}
       </div>
-     
+
       <div className={styles.feildset}>
         <input
           type="password"
