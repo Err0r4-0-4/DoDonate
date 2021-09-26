@@ -67,6 +67,7 @@ const Loginadmin = () => {
     if (keystroke3.trim().length > 4 && keystroke.trim().length > 3)
       // dispatch({ type: "loginadmin" });
       console.log(isInvalid + " " + isInvalid3);
+      
     Settouched(true);
     if (keystroke.trim().length === 0) {
       setinvalidstate(true);
