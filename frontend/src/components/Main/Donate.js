@@ -17,6 +17,7 @@ const Donate = () => {
           </div>
           <Other2 className={styles.other} />
           <Form2 className={styles.form} />
+          
         </div>
       </Slide>
     </EachPage>
