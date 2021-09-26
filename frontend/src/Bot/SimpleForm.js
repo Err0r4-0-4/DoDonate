@@ -55,8 +55,17 @@ class SimpleForm extends Component {
             id: "0",
             options: [
               { value: "New User", label: "New User", trigger: "1" },
-              { value: "Existing User", label: "Existing User", trigger: "6" },
+              {
+                value: "Existing User",
+                label: "Existing User",
+                trigger: "001",
+              },
             ],
+          },
+          {
+            id: "001",
+            message: "Rechecking your details!",
+            trigger: "1",
           },
           {
             id: "1",
@@ -195,20 +204,24 @@ class SimpleForm extends Component {
             id: "select-question",
             options: [
               {
-                value: "File an Online Fir",
-                label: "File an Online Fir",
+                value: "Donate Blood",
+                label: "Donate Blood",
                 trigger: "new-fir",
               },
               {
-                value: "Update on already filed Fir",
-                label: "Update on already filed Fir",
+                value: "Find A Hospital",
+                label: "Find A Hospital",
                 trigger: "already-fir",
               },
-              { value: "Other", label: "Other", trigger: "other-help" },
-              { value: "Contact", label: "Contact", trigger: "contact" },
               {
-                value: "Issue Solved",
-                label: "Issue Solved",
+                value: "Other Issue",
+                label: "Other Issue",
+                trigger: "other-help",
+              },
+              { value: "Contact US ", label: "Contact US", trigger: "contact" },
+              {
+                value: "Issue Solved!",
+                label: "Issue Solved!",
                 trigger: "end-message",
               },
             ],
@@ -216,7 +229,7 @@ class SimpleForm extends Component {
           {
             id: "new-fir",
             message:
-              "To File a New Fir Visit the Main Page and Fill out the Form",
+              "To Donate Blood Visit your nearest Hospital! Hospital Lists are present in one of the pages named 'Hospital'",
             trigger: "select",
           },
           {
@@ -231,23 +244,23 @@ class SimpleForm extends Component {
           },
           {
             id: "contact3",
-            message: "Contact 1090 for Women Help Line",
+            message: "Contact 102 for Ambulance",
             trigger: "contact4",
           },
           {
             id: "contact4",
-            message: "Contact 1098 for Childern Help Line",
+            message: "Contact 011-237716441 for Red Cross Society",
             trigger: "contact5",
           },
           {
             id: "contact5",
-            message: "Contact 1098 for Childern Help Line",
+            message: "Contact 001-23359379 for Rotary Blood Bank",
             trigger: "select",
           },
           {
             id: "already-fir",
             message:
-              "To check the status of already Filed online Fir check your Home page",
+              "To find a Hospital just visit the page called 'Hospitals'",
             trigger: "select",
           },
           {
@@ -259,20 +272,20 @@ class SimpleForm extends Component {
             id: "links",
             options: [
               {
-                value: "Official Webite of U.P. Police",
-                label: "Official Webite of U.P. Police",
+                value: "RedCross Society",
+                label: "RedCross Society",
                 trigger: "official1",
               },
 
               {
-                value: "F.I.R. not taken seriously",
-                label: "F.I.R. not taken seriously",
+                value: "Payment in a Hospital",
+                label: "Payment in a Hospital",
                 trigger: "not-serious1",
               },
 
               {
-                value: "Talk To Higher Officials",
-                label: "Talk To Higher Officials",
+                value: "No hospital in my district",
+                label: "No hospital in my district",
                 trigger: "talk1",
               },
 
@@ -285,8 +298,7 @@ class SimpleForm extends Component {
           },
           {
             id: "official1",
-            message:
-              "To File a New Fir Visit the Main Page and Fill out the Form",
+            message: "To ",
             trigger: "official",
           },
           {
@@ -305,7 +317,7 @@ class SimpleForm extends Component {
           {
             id: "talk1",
             message:
-              "To File a New Fir Visit the Main Page and Fill out the Form",
+              "We will take the matter seriously and Get back to You!!Thank you for patience",
             trigger: "talk",
           },
           {
@@ -313,9 +325,7 @@ class SimpleForm extends Component {
             component: (
               <div className="component">
                 <ul className="flex">
-                  <li>
-                    <a href="#">Contact Higher Officials</a>
-                  </li>
+                  <li></li>
                 </ul>
               </div>
             ),
@@ -350,7 +360,7 @@ class SimpleForm extends Component {
           },
         ]}
         {...config}
-        headerTitle="Hawaldar Saluke: On Duty Sir!"
+        headerTitle="Nurse Didi: On Duty Sir!"
         placeholder="For your Help"
         speechSynthesis={{ enable: true, lang: "en" }}
       />

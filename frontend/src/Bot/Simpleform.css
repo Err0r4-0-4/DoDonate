@@ -23,8 +23,8 @@ td {
   display: inline-block;
   color: white;
 }
-li a:link,
-li a:visited {
+.flex li a:link,
+.flex li a:visited {
   display: block;
   background-color: blueviolet;
   color: white;
