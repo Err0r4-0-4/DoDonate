@@ -86,7 +86,7 @@ const Loginadmin = () => {
         console.log(res);
         dispatch({ type: "loginadmin" });
         localStorage.setItem("type", "admin");
-        setLoading(false)
+        setLoading(false);
         window.location.reload();
       })
       .catch((err) => {
@@ -102,15 +102,14 @@ const Loginadmin = () => {
 
   return (
     <form className={styles.form} onSubmit={formsubmission}>
-
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
 
       {/* {isAuth ? <Redirect to="creatorProfile" /> : null}
       {showSpinner ? <Spinner /> : null} */}
       <div className={styles.feildset}>
         <input
           type="text"
-          placeholder="Admin I.D."
+          placeholder="Admin I.D. For your use :admin"
           value={keystroke}
           className={isInvalid ? styles.error : styles.feild}
           onChange={changedevent}
@@ -140,7 +139,7 @@ const Loginadmin = () => {
       <div className={styles.feildset}>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Password: password"
           value={keystroke3}
           className={isInvalid3 ? styles.error : styles.feild}
           onChange={changedevent3}

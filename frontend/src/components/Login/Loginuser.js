@@ -56,7 +56,7 @@ const Loginuser = () => {
 
     if (keystroke3.trim().length > 4 && keystroke.trim().length > 3)
       // dispatch({ type: "loginadmin" });
-    Settouched(true);
+      Settouched(true);
     if (keystroke.trim().length === 0) {
       setinvalidstate(true);
     }
@@ -64,7 +64,6 @@ const Loginuser = () => {
       console.log(keystroke);
       keystrikeSet("");
     }
-    
 
     Settouched3(true);
     if (keystroke3.trim().length === 0) {
@@ -76,30 +75,29 @@ const Loginuser = () => {
     }
 
     const data = {
-      aadharNo : keystroke,
-      password: keystroke3
+      aadharNo: keystroke,
+      password: keystroke3,
     };
 
     console.log(data);
 
     axios
-    .post("https://dodonate-backend.herokuapp.com/user/login", data)
-    .then((res) => {
-      console.log(res);
-      dispatch({ type: "loginuser" });
-      localStorage.setItem("aadhaar", res.data.aadharNo);
-      localStorage.setItem("url", res.data.fileUrl);
-      localStorage.setItem("type", "user");
-      
-      setLoading(false);
-      window.location.reload();
-    })
-    .catch((err) => {
-      console.log(err);
-      setLoading(false);
-      window.alert("unable to login");
-    });
+      .post("https://dodonate-backend.herokuapp.com/user/login", data)
+      .then((res) => {
+        console.log(res);
+        dispatch({ type: "loginuser" });
+        localStorage.setItem("aadhaar", res.data.aadharNo);
+        localStorage.setItem("url", res.data.fileUrl);
+        localStorage.setItem("type", "user");
 
+        setLoading(false);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        window.alert("unable to login");
+      });
   };
 
   const isInvalid = touched && invalidstate;
@@ -108,13 +106,13 @@ const Loginuser = () => {
 
   return (
     <form className={styles.form} onSubmit={formsubmission}>
-      {loading ? <Spinner/> : null}
+      {loading ? <Spinner /> : null}
       {/* {showSpinner ? <Spinner /> : null}
       {isAuth ? <Redirect to="home" /> : null} */}
       <div className={styles.feildset}>
         <input
           type="text"
-          placeholder="User I.D."
+          placeholder="Aadhar Number: 111111111111"
           value={keystroke}
           className={isInvalid ? styles.error : styles.feild}
           onChange={changedevent}
@@ -144,7 +142,7 @@ const Loginuser = () => {
       <div className={styles.feildset}>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Password: y3uo7ec1"
           value={keystroke3}
           className={isInvalid3 ? styles.error : styles.feild}
           onChange={changedevent3}

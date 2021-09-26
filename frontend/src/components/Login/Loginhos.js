@@ -80,21 +80,21 @@ const Loginhos = () => {
     console.log(data);
 
     axios
-    .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
-    .then((res) => {
-      console.log(res.data.hospitalId);
-      localStorage.setItem("hospitalId", res.data.hospitalId);
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("type", "hospital");
-      dispatch({ type: "loginhos" });
-      setLoading(false);
-      window.location.reload();
-    })
-    .catch((err) => {
-      console.log(err);
-      setLoading(false);
-      window.alert("unable to login");
-    });
+      .post("https://dodonate-backend.herokuapp.com/hospital/login", data)
+      .then((res) => {
+        console.log(res.data.hospitalId);
+        localStorage.setItem("hospitalId", res.data.hospitalId);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("type", "hospital");
+        dispatch({ type: "loginhos" });
+        setLoading(false);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        window.alert("unable to login");
+      });
   };
 
   const isInvalid = touched && invalidstate;
@@ -111,7 +111,7 @@ const Loginhos = () => {
       <div className={styles.feildset}>
         <input
           type="text"
-          placeholder="Hospital I.D."
+          placeholder="Hospital I.D.(jatingupta0214@gmail.com)"
           value={keystroke}
           className={isInvalid ? styles.error : styles.feild}
           onChange={changedevent}
@@ -127,7 +127,7 @@ const Loginhos = () => {
       <div className={styles.feildset}>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Password: 0a7s2wpz"
           value={keystroke3}
           className={isInvalid3 ? styles.error : styles.feild}
           onChange={changedevent3}
