@@ -16,6 +16,7 @@ app.get("/status", (req, res, next) => {
   res.send("UP!!");
 });
 
+app.use("/user", require("./routes/route.user"));
 app.use("/admin", require("./routes/route.admin"));
 
 mongoose.connect(url, () => {
