@@ -118,12 +118,12 @@ const User = () => {
             <div className={styles.balance}>
               <div>Balance : {values.balance}</div>
 
-              {values.name}
-              <div>{values.age}</div>
-              <div>{values.sex}</div>
-              <div>{values.mobile}</div>
+              <div>Name: {values.name}</div>
+              <div>Age: {values.age}</div>
+              <div>Sex: {values.sex ? "Male" : "Female"}</div>
+              <div>Mobile: {values.mobile}</div>
               <div>
-                {values.city} ,{values.state}
+                Location: {values.city} ,{values.state}
               </div>
 
               <a href="#" className={styles.an}>
