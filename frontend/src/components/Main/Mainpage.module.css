@@ -40,7 +40,7 @@
 .mainpage {
   height: 70vh;
   width: 100%;
-  background-image: linear-gradient(125deg, #204561d3 60%, #e510142d 71%),
+  background-image: linear-gradient(125deg, #0000002d 60%, #0000002d 71%),
     url("../Image/donate.jpg");
   /*background-attachment: fixed;*/
   background-size: cover;
@@ -230,7 +230,7 @@
   width: 90px;
   top: -30px;
   left: 15px;
-  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  /* background: linear-gradient(60deg, #ffa726, #fb8c00); */
   padding: 25px;
   box-shadow: 1px 1px 10px rgb(189, 189, 189);
   border-radius: 5px;
@@ -252,7 +252,7 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  background: linear-gradient(60deg, #26c6da, #00acc1);
+  /* background: linear-gradient(60deg, #26c6da, #00acc1); */
 }
 .iconbox3 {
   position: absolute;

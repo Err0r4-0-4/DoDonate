@@ -10,7 +10,7 @@ import img2 from "../components/Image/drop.gif";
 
 const Footer = () => (
   <div className={styles.footer}>
-    <img src={img2} className={styles.img2} alt="GIF DROp" />
+    {/* <img src={img2} className={styles.img2} alt="GIF DROp" />
 
     <img src={img} className={styles.img} alt="GIF hand" />
 
@@ -71,7 +71,7 @@ const Footer = () => (
       </ul>
     </div>
     <br />
-    <div className={styles.last2}>...DO DOnate...</div>
+    <div className={styles.last2}>...DO DOnate...</div> */}
   </div>
 );
 

@@ -44,11 +44,11 @@ const Header = () => {
       ) : (
         <div className={small ? styles.header : styles.header2}>
           <div className={styles.logo_}>
-            <img
+            {/* <img
               src={Img1}
               alt="Logo"
               className={small ? styles.nologo : styles.logo}
-            ></img>
+            ></img> */}
             <p className={styles.logoname}>Do.Donate</p>
           </div>
 
@@ -82,7 +82,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/hospital/list"
+                to="/hospital/new"
                 className={styles.link}
                 activeClassName={styles.active}
                 exact
