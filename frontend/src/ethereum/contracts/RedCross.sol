@@ -12,15 +12,6 @@ contract Manager{
    string[] public hospitalCity;
    
    uint public hospitalCount;
-   
-   function Manager() public {
-       manager = msg.sender;
-   }
-   
-    modifier restricted() {
-        require(msg.sender == manager);
-        _;
-    }
     
     function createDonor(string _aadhaar, string _name, uint _age, bool _sex, string _city, string _state, string _mobile) public restricted{
         address newDonor = new Donor(msg.sender, _aadhaar, _name, _age, _sex, _city, _state, _mobile);
